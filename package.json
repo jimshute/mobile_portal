@@ -1,0 +1,19 @@
+{
+  "name": "mobile_portal",
+  "version": "1.0.0",
+  "description": "mobile portal for cloud foundry based paas platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimshute/mobile_portal.git"
+  },
+  "author": "jim shute",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimshute/mobile_portal/issues"
+  },
+  "homepage": "https://github.com/jimshute/mobile_portal"
+}
