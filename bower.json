@@ -1,0 +1,30 @@
+{
+  "name": "mobile_portal",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jimshute/mobile_portal",
+  "authors": [
+    "Jim Shute <jimshute@hotmail.com>"
+  ],
+  "description": "mobile portal for cloud foundry based paas platform",
+  "keywords": [
+    "cloud",
+    "foundry"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mobile-angular-ui": "~1.2.0-beta.11",
+    "angular": "~1.3.10",
+    "angular-route": "~1.3.10",
+    "angular-animate": "~1.3.14",
+    "jquery": "~2.1.3",
+    "highcharts.com": "~4.1.4"
+  }
+}

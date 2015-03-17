@@ -1,0 +1,51 @@
+.app-list-item a {
+  display: block;
+  height: auto;
+  overflow: hidden;
+}
+
+.app-list-item a:after {
+  content: '';
+  display: block;
+  width: 100%;
+  clear: both;
+  margin-left: 72px;
+  border-top: 1px solid #CFD8DC;
+  /*border-left: 72px solid transparent;*/
+}
+
+.app-state {
+  color: #FFF;
+  float: right;
+  font-size: 14px;
+  line-height: 16px;
+  vertical-align: middle;
+  padding: 0 8px;
+  border-radius: 8px;
+}
+
+/*.quota-card .quota-desc {*/
+  /*padding-left: 16px;*/
+
+/*}*/
+
+/*.quota-card .data {*/
+/*}*/
+
+.quota-card .data em {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.c-content .m-list-item-text {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.c-content .m-list-item:after {
+  height: 0;
+  content: '';
+  border-top: 1px dotted #CFD8DC;
+  display: block;
+}

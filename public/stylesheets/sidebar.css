@@ -1,0 +1,102 @@
+.sidebar-container {
+  background-color: #FFF;
+  height: 100%;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", "微软雅黑", Calibri, Helvetica, Arial, sans-serif;
+}
+
+.sidebar-title {
+  background-color: #4CAF50;
+  height: 140px;
+  padding: 30px 20px;
+}
+
+#user-avatar {
+  /*width: 100px;*/
+}
+
+#user-avatar img {
+  width: 80px;
+  height: 80px;
+}
+
+#user-desc {
+  padding-left: 100px;
+}
+
+#user-name {
+  color: #FFF;
+  font-size: 28px;
+  line-height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#email {
+  margin-top: 20px;
+  color: #C8E6C9;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul.button-list {
+  padding: 0;
+  margin: 0;
+}
+
+#org {
+  background-color: #66BB6A;
+}
+
+#space {
+  background-color: #81C784;
+}
+
+.button-list a, .button-list a:hover, .button-list a:visited, .button-list a:active, .button-list a:focus {
+  text-decoration: none;
+  height: 48px;
+}
+
+li.org-space {
+  line-height: 48px;
+  list-style: none;
+  font-size: 20px;
+  padding: 0 20px;
+}
+
+li.org-space a {
+  display: block;
+  color: #FFF;
+}
+
+li.org-space i {
+  float: right;
+  line-height: 48px;
+}
+
+li.button {
+  height: 48px;
+  line-height: 48px;
+}
+
+li.button a {
+  display: block;
+  padding: 0 20px;
+  font-size: 20px;
+  color: #616161;
+}
+
+li.button a:active {
+  background-color: #CFD8DC;
+}
+
+li.button i {
+  display: inline-block;
+  width: 36px;
+  text-align: center;
+}
+
+li.button a:after {
+
+}
+

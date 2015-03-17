@@ -1,0 +1,67 @@
+input:focus {
+    outline: none;
+}
+
+.app {
+    background-color: #446CB3;
+}
+
+.app-content {
+    position: absolute;
+    top: 20%;
+}
+
+.user-image {
+    /*margin-top: 8em;*/
+    text-align: center;
+}
+
+.user-image img {
+    width: 40%;
+    max-width: 10em;
+}
+
+.login-form {
+    margin: 3.5em 2em;
+}
+
+.input-block {
+    position: relative;
+    border-bottom: 1px #FFF solid;
+    height: 3em;
+    font-size: 1.25em;
+    padding-top: 0.8em;
+}
+
+.input-block label {
+    position: absolute;
+    left: 0;
+    top: 1em;
+    color: #59ABE3;
+    display: inline-block;
+    width: 2em;
+    text-align: center;
+}
+
+.input-block input {
+    color: #FFF;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding-left: 2em;
+}
+
+.button-block {
+    padding: 2em;
+}
+
+.btn, .btn:hover, .btn:visited, .btn:focus, .btn-default, .btn-default:hover, .btn-default:visited, .btn-default:focus {
+    border-color: #FFF;
+    background-color: transparent;
+    color: #FFF;
+    width: 100%;
+}
+
+.btn:active, .btn:active:focus, .btn-default:active, .btn-default:active:focus {
+    background-color: transparent;
+}
