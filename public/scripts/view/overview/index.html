@@ -6,7 +6,7 @@
     <i class="fa fa-bars"></i>
   </div>
 </div>
-<div class="scrollable">
+<div class="scrollable" ng-init="initOverview()">
   <div class="scrollable-content">
     <card card-title="应用" show-foot=false title-color="bg-green" title-font-color="t-white">
       <div class="c-content">
@@ -17,9 +17,9 @@
         <process-bar percent="{{routeNum / totalRoute * 100}}%" class="clear-fix"></process-bar>
         <ul class="overview-list">
           <li ng-repeat="app in apps">
-            <a href="#/appDetail/{{app.guid}}">
+            <a href="#/applications/{{app.guid}}">
               <div><img ng-src="/images/appFrameworks/{{app.app_type}}.png"/></div>
-              <span class="t-blue-grey-800" ng-bind="app.app_name"></span>
+              <span class="t-blue-grey-800" ng-bind="app.name"></span>
             </a>
           </li>
         </ul>
@@ -37,14 +37,14 @@
         <process-bar percent="{{serviceNum / totalService * 100}}%" class="clear-fix"></process-bar>
         <ul class="overview-list">
           <li ng-repeat="service in services">
-            <a href="#/ServiceDetail/{{service.guid}}">
-              <div><img ng-src="/images/services/{{service.label}}.png"/></div>
+            <a href="#/services/{{service.guid}}">
+              <div><img ng-src="/images/services/{{service.service_type}}.png"/></div>
               <span class="t-blue-grey-800" ng-bind="service.name"></span>
             </a>
           </li>
         </ul>
         <div class="more">
-          <a class="btn m-btn btn-flat btn-blue" href="javascript:;">更多&gt;&gt;</a>
+          <a class="btn m-btn btn-flat btn-blue" href="#/services">更多&gt;&gt;</a>
         </div>
       </div>
     </card>

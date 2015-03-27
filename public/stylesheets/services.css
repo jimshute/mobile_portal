@@ -1,0 +1,25 @@
+.service-info {
+  width: 100%;
+}
+
+.service-info tbody {
+}
+
+.service-info tr {
+  font-size: 18px;
+  line-height: 48px;
+  width: 100%;
+  margin: 0;
+}
+
+.service-info th {
+  text-align: right;
+  width: 30%;
+  margin: 0;
+}
+
+.service-info td {
+  padding-left: 16px;
+  width: 70%;
+  margin: 0;
+}

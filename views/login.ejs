@@ -26,11 +26,32 @@
                     <input type="password" name="password" id="password" placeholder="password..."/>
                 </div>
                 <div class="button-block">
-                    <a class="btn btn-default" href="javascript:;">登录</a>
+                    <a class="btn btn-default" id="login" href="javascript:;">登录</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script>
+    $(function() {
+        $('#login').on('click', function() {
+            $.ajax({
+                url: '/login',
+                method: 'POST',
+                data: {
+                    userName: $('#email').val(),
+                    password: $('#password').val()
+                },
+                success: function(data) {
+                    location.href='/';
+                },
+                err: function() {
+
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

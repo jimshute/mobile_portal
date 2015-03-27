@@ -12,7 +12,8 @@ angular.module('app.directives').directive('detailHeader', ['AppStatus', functio
       bgColor: '@',
       imgUrl: '@',
       headerBgColor: '@',
-      status: '@'
+      statusColor: '@',
+      statusText: '@'
     },
     controller: function ($scope, $element, $attrs, $transclude) {
       $scope.appStatus = AppStatus;

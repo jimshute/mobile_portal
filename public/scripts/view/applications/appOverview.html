@@ -2,44 +2,77 @@
   <span>应用详情</span>
 </div>
 <div ui-content-for="topbar-left">
-  <div class="btn">
+  <div class="btn" ng-click="goBack()">
     <i class="fa fa-chevron-left"></i>
   </div>
 
 </div>
 <div ui-content-for="topbar-right">
   <!--<div class="btn-group pull-right">-->
-    <a ui-turn-on='barMenu' class='btn'>
-      <i class="fa fa-ellipsis-v"></i>
-    </a>
-    <ul
-        class="dropdown-menu"
-        ui-outer-click="Ui.turnOff('barMenu')"
-        ui-outer-click-if="Ui.active('barMenu')"
-        role="menu"
-        ui-show="barMenu"
-        ui-state="barMenu"
-        ui-turn-off="barMenu">
+  <a ui-turn-on='barMenu' class='btn'>
+    <i class="fa fa-ellipsis-v"></i>
+  </a>
+  <ul
+      class="dropdown-menu"
+      ui-outer-click="Ui.turnOff('barMenu')"
+      ui-outer-click-if="Ui.active('barMenu')"
+      role="menu"
+      ui-show="barMenu"
+      ui-state="barMenu"
+      ui-turn-off="barMenu">
 
-      <li><a class="m-btn"><i class="fa fa-play"></i>启动</a></li>
-      <li><a class="m-btn"><i class="fa fa-stop"></i>停止</a></li>
-      <li><a class="m-btn"><i class="fa fa-repeat"></i>重启</a></li>
-      <li><a class="m-btn"><i class="fa fa-refresh"></i>刷新</a></li>
-      <li class="divider"></li>
-      <li><a class="m-btn"><i class="fa fa-cog"></i>资源配置</a></li>
-      <li><a class="m-btn"><i class="fa fa-puzzle-piece"></i>绑定服务</a></li>
-      <li class="divider"></li>
-      <li><a class="m-btn"><i class="fa fa-trash"></i>删除应用</a></li>
-    </ul>
+    <li><a class="m-btn" ng-click="operateApp('start')"><i class="fa fa-play"></i>启动</a></li>
+    <li><a class="m-btn" ng-click="operateApp('stop')"><i class="fa fa-stop"></i>停止</a></li>
+    <li><a class="m-btn" ng-click="operateApp('restart')"><i class="fa fa-repeat"></i>重启</a></li>
+    <li><a class="m-btn" ng-click="operateApp('refresh')"><i class="fa fa-refresh"></i>刷新</a></li>
+    <li class="divider"></li>
+    <li><a class="m-btn"><i class="fa fa-cog"></i>资源配置</a></li>
+    <li><a class="m-btn"><i class="fa fa-puzzle-piece"></i>绑定服务</a></li>
+    <li class="divider"></li>
+    <li><a class="m-btn"><i class="fa fa-trash"></i>删除应用</a></li>
+  </ul>
   <!--</div>-->
 </div>
-<div class="scrollable">
-  <detail-header class="scrollable-header" bg-color="bg-blue" title="App Name" status="{{app.app_resource.state}}">
-    <div style="padding-top: 20px;">http://www.baidu.com</div>
+<div class="scrollable" ng-init="getAppOverview()">
+  <detail-header
+      class="scrollable-header"
+      bg-color="bg-blue"
+      title="{{app.name}}"
+      img-url="/images/appFrameworks/{{app.app_type}}.png"
+      status-color="{{appStatus[app.app_resource.state].color}}"
+      status-text="{{appStatus[app.app_resource.state].text}}">
+    <div style="padding-top: 20px;">{{app.urls[0].host}}.{{app.urls[0].domain.name}}</div>
   </detail-header>
   <div class="scrollable-content">
     <card title-color="bg-green" show-foot="false" card-title="配额">
       <div class="c-content">
+        <!--<quota-card used="{{app.app_resource.running_instances}}" all="{{app.app_resource.instances}}" quota-name="实例">-->
+        <!--<div class="data">-->
+        <!--<div><em>{{app.app_resource.running_instances}} / {{app.app_resource.instances}}</em> 个实例</div>-->
+        <!--<div></div>-->
+        <!--</div>-->
+        <!--<div class="extra">-->
+        <!--正在运行-->
+        <!--</div>-->
+        <!--</quota-card>-->
+        <!--<quota-card used="{{generateUsage('mem') / 1024 / 1024}}" all="{{app.app_resource.memory * app.app_resource.running_instances}}" quota-name="内存">-->
+        <!--<div class="data">-->
+        <!--<div><em>{{(generateUsage('mem') / 1024 / 1024).toFixed(0)}}M / {{app.app_resource.memory * app.app_resource.running_instances}}M</em></div>-->
+        <!--<div></div>-->
+        <!--</div>-->
+        <!--<div class="extra">-->
+        <!--正在使用-->
+        <!--</div>-->
+        <!--</quota-card>-->
+        <!--<quota-card used="{{(generateUsage('mem') / 1024 / 1024).toFixed(0)}}" all="{{app.app_resource.disk_quota * app.app_resource.running_instances}}" quota-name="硬盘">-->
+        <!--<div class="data">-->
+        <!--<div><em>{{(generateUsage('mem') / 1024 / 1024).toFixed(0)}}M / {{(app.app_resource.disk_quota * app.app_resource.running_instances / 1024).toFixed(0)}}G</em></div>-->
+        <!--<div></div>-->
+        <!--</div>-->
+        <!--<div class="extra">-->
+        <!--正在使用-->
+        <!--</div>-->
+        <!--</quota-card>-->
         <quota-card used="{{app.app_resource.running_instances}}" all="{{app.app_resource.instances}}" quota-name="实例">
           <div class="data">
             <div><em>{{app.app_resource.running_instances}} / {{app.app_resource.instances}}</em> 个实例</div>
@@ -49,18 +82,18 @@
             正在运行
           </div>
         </quota-card>
-        <quota-card used="{{generateUsage('mem') / 1024 / 1024}}" all="{{app.app_resource.memory * app.app_resource.running_instances}}" quota-name="内存">
+        <quota-card used="{{app.ummM}}" all="{{app.mmM}}" quota-name="内存">
           <div class="data">
-            <div><em>{{(generateUsage('mem') / 1024 / 1024).toFixed(0)}}M / {{app.app_resource.memory * app.app_resource.running_instances}}M</em></div>
+            <div><em>{{app.ummM}}M / {{app.mmM}}M</em></div>
             <div></div>
           </div>
           <div class="extra">
             正在使用
           </div>
         </quota-card>
-        <quota-card used="{{(generateUsage('mem') / 1024 / 1024).toFixed(0)}}" all="{{app.app_resource.disk_quota * app.app_resource.running_instances}}" quota-name="硬盘">
+        <quota-card used="{{app.uhddM}}" all="{{app.hddM}}" quota-name="硬盘">
           <div class="data">
-            <div><em>{{(generateUsage('mem') / 1024 / 1024).toFixed(0)}}M / {{(app.app_resource.disk_quota * app.app_resource.running_instances / 1024).toFixed(0)}}G</em></div>
+            <div><em>{{app.uhddM}}M / {{app.hddM / 1024}}G</em></div>
             <div></div>
           </div>
           <div class="extra">

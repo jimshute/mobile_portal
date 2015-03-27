@@ -13,10 +13,10 @@ angular.module('app.directives').directive('processBar', function () {
       $scope.color = 'bg-green';
       $scope.$watch('percent', function (value) {
         var v = value.replace('%', '');
-        if (v <= 50) {
+        if (v <= 60) {
           return $scope.color = 'bg-green';
         }
-        if (v > 50 && v <= 80) {
+        if (v > 60 && v <= 80) {
           return $scope.color = 'bg-orange';
         }
         return $scope.color = 'bg-red';

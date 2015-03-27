@@ -1,0 +1,28 @@
+{
+     "interfaceType": "GET",
+     "requiredParameters": [
+          {
+               "name": "test",
+               "required": true,
+               "remark": "test",
+               "nameVerify": "name_1426664732000",
+               "ruleVerify": "rule_1426664732000"
+          }
+     ],
+     "responseParameters": [
+          {
+               "id": "01",
+               "kind": "string",
+               "name": "test",
+               "rule": "test",
+               "array": [],
+               "nameVerify": "name_1426664738000",
+               "ruleVerify": "rule_1426664738000"
+          }
+     ],
+     "reqError": [],
+     "docError": [],
+     "interfaceUrl": "/test.json",
+     "interfaceName": "/test.json",
+     "lazyLoad": "no"
+}

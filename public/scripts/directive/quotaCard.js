@@ -45,7 +45,7 @@ angular.module('app.directives').directive('quotaCard', function () {
           },
           series: [{
             data: [
-              parseInt($scope.used), parseInt($scope.all)
+              parseInt($scope.used), parseInt($scope.all - $scope.used)
             ]
           }]
         });

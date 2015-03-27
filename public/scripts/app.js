@@ -16,8 +16,9 @@ angular.module('app', [
 ]);
 angular.module('app.constants', []);
 angular.module('app.directives', ['ngAnimate', 'app.constants']);
-angular.module('app.applications', ['app.constants']);
-angular.module('app.services', []);
+angular.module('app.applications', ['app.constants', 'ngResource']);
+angular.module('app.services', ['app.constants', 'ngResource']);
 angular.module('app.overview', [
-  'app.directives'
+  'app.directives',
+  'ngResource'
 ]);

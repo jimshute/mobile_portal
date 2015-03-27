@@ -8,11 +8,14 @@ angular.module('app').config(['$routeProvider', function ($routeProvider) {
   }).when('/applications', {
     templateUrl: 'scripts/view/applications/index.html',
     controller: 'ApplicationsController'
-  }).when('/appOverview', {
+  }).when('/applications/:id', {
     templateUrl: 'scripts/view/applications/appOverview.html',
     controller: 'ApplicationsController'
   }).when('/services', {
     templateUrl: 'scripts/view/services/index.html',
+    controller: 'ServicesController'
+  }).when('/services/:id', {
+    templateUrl: 'scripts/view/services/instanceDetail.html',
     controller: 'ServicesController'
   }).otherwise({
     templateUrl: 'scripts/view/overview/index.html',
