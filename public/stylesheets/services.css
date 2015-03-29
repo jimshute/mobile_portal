@@ -23,3 +23,97 @@
   width: 70%;
   margin: 0;
 }
+
+.group-head {
+  padding: 8px 0;
+}
+
+.group-head span{
+  height: 20px;
+  line-height: 20px;
+  padding: 0 16px;
+}
+
+.m-form-group {
+}
+
+.m-form-group label {
+  font-size: 18px;
+  margin: 0;
+  line-height: 36px;
+  height: 36px;
+  font-weight: normal;
+}
+
+.m-form-group .input-field {
+  font-size: 16px;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  border-bottom: 1px solid #90a4ae;
+}
+
+.m-form-group input {
+  padding: 0;
+  border: none;
+  height: 100%;
+  max-width: 145px;
+}
+
+.m-form-group .prefix {
+  display: inline-block;
+  font-weight: bold;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 5px 0 0;
+  text-align: right;
+  min-width: 100px;
+}
+
+.m-form-group .service-plans {
+
+}
+
+.m-form-group ul {
+
+}
+
+.m-form-group li {
+  border-bottom: 1px solid #CFD8DC;
+  line-height: 36px;
+  list-style: none;
+}
+
+.m-form-group span {
+  display:  inline-block;
+  width: 33.3%;
+}
+
+.m-form-group .plan-name {
+  padding-left: 8px;
+}
+
+.m-form-group .plan-price {
+  text-align: center;
+}
+
+.m-form-group .plan-checkbox {
+  padding-right: 8px;
+  font-family: FontAwesome;
+  text-align: right;
+}
+
+.m-form-group .plan-checkbox:after {
+  display: inline-block;
+  width: 14px;
+  text-align: left;
+  content: '\f096';
+}
+
+.m-form-group .plan-selected {
+  background-color: #CFD8DC;
+}
+
+.m-form-group .plan-selected .plan-checkbox:after {
+  content: '\f046';
+}

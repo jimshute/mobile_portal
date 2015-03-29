@@ -225,6 +225,9 @@ ul {
 .m-list-item-text .m-primary-text {
   font-size: 16px;
   color: #000;
+  white-space: nowrap;
+  /*overflow-x: hidden;*/
+  text-overflow: ellipsis;
 }
 
 .m-list-item-text .m-secondary-text {
@@ -232,6 +235,10 @@ ul {
   line-height: 1em;
   padding-top: 10px;
   color: #607D8B;
+  white-space: nowrap;
+  overflow: hidden;
+  /*overflow-y: auto;*/
+  text-overflow: ellipsis;
 }
 
 .m-has-icon-left .m-list-icon {

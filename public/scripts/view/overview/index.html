@@ -37,14 +37,14 @@
         <process-bar percent="{{serviceNum / totalService * 100}}%" class="clear-fix"></process-bar>
         <ul class="overview-list">
           <li ng-repeat="service in services">
-            <a href="#/services/{{service.guid}}">
+            <a href="#/services_instances/{{service.guid}}">
               <div><img ng-src="/images/services/{{service.service_type}}.png"/></div>
               <span class="t-blue-grey-800" ng-bind="service.name"></span>
             </a>
           </li>
         </ul>
         <div class="more">
-          <a class="btn m-btn btn-flat btn-blue" href="#/services">更多&gt;&gt;</a>
+          <a class="btn m-btn btn-flat btn-blue" href="#/services_instances">更多&gt;&gt;</a>
         </div>
       </div>
     </card>

@@ -25,6 +25,9 @@ router.get('/applications/:id/restart', appController.restartApp);
 router.get('/service_instances', serviceController.getInstanceList);
 router.get('/service_instances/:id', serviceController.getServiceInstance);
 
+router.get('/services', serviceController.getServiceList);
+router.get('/services/:id', serviceController.getService);
+
 router.get('/applications/:id/route/:rid', function (req, res) {
     console.log(req.params.id);
     console.log(req.params.rid);

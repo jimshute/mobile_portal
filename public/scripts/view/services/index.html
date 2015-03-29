@@ -7,14 +7,24 @@
   </div>
 </div>
 <div ui-content-for="topbar-right">
-  <div class="btn">
+  <a ui-turn-on="barMenu" class="btn">
     <i class="fa fa-ellipsis-v"></i>
-  </div>
+  </a>
+  <ul
+      class="dropdown-menu"
+      ui-outer-click="Ui.turnOff('barMenu')"
+      ui-outer-click-if="Ui.active('barMenu')"
+      role="menu"
+      ui-show="barMenu"
+      ui-state="barMenu"
+      ui-turn-off="barMenu">
+    <li><a class="m-btn" href="#/services"><i class="fa fa-plus"></i>添加服务实例</a></li>
+  </ul>
 </div>
 <div class="scrollable" ng-init="initServiceInstanceList()">
   <ul class="scrollable-content m-list app-list">
     <li ng-repeat="service in serviceInstances" class="m-list-item app-list-item m-has-img m-has-icon-right">
-      <a href="#/services/{{service.guid}}">
+      <a href="#/services_instances/{{service.guid}}">
         <img class="m-list-img" ng-src="/images/services/{{service.label}}.png"/>
         <i class="fa fa-angle-right m-list-icon m-two-line"></i>
         <div class="m-list-item-text m-two-line app-list-text">

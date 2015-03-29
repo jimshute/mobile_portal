@@ -28,9 +28,9 @@ angular.module('app.directives').directive('card', function () {
           $scope.cardExpanded = false;
         } else {
           $scope.cardExpanded = true;
-          setTimeout(function() {
-            $scope.cardBody.height('auto');
-          }, 900);
+          //setTimeout(function() {
+          //  $scope.cardBody.height('auto');
+          //}, 500);
         }
       };
     }

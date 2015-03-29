@@ -9,30 +9,37 @@ angular.module('app.services').controller('ServicesController', [
     $scope.serviceInstance = {};
     $scope.services = [];
     $scope.service = {};
+    $scope.selectedPlan = null;
     $scope.initServiceInstanceList = function () {
-      ServiceInstance.query(function(data) {
+      ServiceInstance.query(function (data) {
         $scope.serviceInstances = data;
       });
     };
-    $scope.loadServiceInstance = function() {
+    $scope.loadServiceInstance = function () {
       var guid = $routeParams.id;
-      ServiceInstance.get({guid: guid}, function(data) {
+      ServiceInstance.get({guid: guid}, function (data) {
         $scope.serviceInstance = data;
       })
     };
-    $scope.loadServiceList = function() {
-      Service.query(function(data) {
+    $scope.loadServiceList = function () {
+      Service.query(function (data) {
         $scope.services = data;
       });
     };
-    $scope.loadService = function() {
+    $scope.loadService = function () {
       var guid = $routeParams.id;
-      Service.get({guid: guid}, function(data) {
+      Service.get({guid: guid}, function (data) {
         $scope.service = data;
       });
     };
-    $scope.goBack = function() {
+    $scope.goBack = function () {
       $window.history.back();
+    };
+    $scope.toggleSelect = function() {
+      $scope.selectedPlan = this.plan;
+      //this.plan.selected = !this.plan.selected;
+    };
+    $scope.submitAddInstance = function() {
+
     }
-  }
-  ]);
+  }]);

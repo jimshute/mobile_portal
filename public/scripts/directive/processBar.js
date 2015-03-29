@@ -10,8 +10,11 @@ angular.module('app.directives').directive('processBar', function () {
       percent: '@'
     },
     controller: function ($scope, $element) {
+      $scope.test = '60%';
       $scope.color = 'bg-green';
+      $scope.barStyle = {'width': 0};
       $scope.$watch('percent', function (value) {
+        $scope.barStyle['width'] = value;
         var v = value.replace('%', '');
         if (v <= 60) {
           return $scope.color = 'bg-green';

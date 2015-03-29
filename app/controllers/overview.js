@@ -15,8 +15,16 @@ exports.getOverview = function (req, res) {
           app_type: 'python', //应用的类型
           guid: '123123', // 应用的id
           name: 'TestPython' // 应用的名称
+        }, {       // 应用数组
+          app_type: 'java', //应用的类型
+          guid: '5436234', // 应用的id
+          name: 'TestJava' // 应用的名称
+        }, {       // 应用数组
+          app_type: 'ruby', //应用的类型
+          guid: '4532627', // 应用的id
+          name: 'TestRuby' // 应用的名称
         }],
-        routes_num: 12, // 该空间中所使用的路由的条数
+        routes_num: 13, // 该空间中所使用的路由的条数
         service_info: [{ // 服务列表
           guid: '123123', // 服务实例的id
           name: 'mongodb-Test', // 服务实例的名称
