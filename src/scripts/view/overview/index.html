@@ -1,0 +1,68 @@
+<div ui-content-for="title">
+  <span>Overview</span>
+</div>
+<div ui-content-for="topbar-left">
+  <div ui-toggle='uiSidebarLeft' class="btn sidebar-toggle">
+    <i class="fa fa-bars"></i>
+  </div>
+</div>
+<div class="scrollable" ng-init="initOverview()">
+  <div class="scrollable-content">
+    <card card-title="应用" show-foot=false title-color="bg-green" title-font-color="t-white">
+      <div class="c-content">
+        <div class="status-name">路由配额</div>
+        <div class="status-data"><span ng-bind="routeNum">0</span>&nbsp;可用&nbsp;/&nbsp;共&nbsp;<span
+            ng-bind="totalRoute">0</span></div>
+        <!--<input type="text" ng-model="test"/>-->
+        <process-bar percent="{{routeNum / totalRoute * 100}}%" class="clear-fix"></process-bar>
+        <ul class="overview-list">
+          <li ng-repeat="app in apps">
+            <a href="#/applications/{{app.guid}}">
+              <div><img ng-src="/images/appFrameworks/{{app.app_type}}.png"/></div>
+              <span class="t-blue-grey-800" ng-bind="app.name"></span>
+            </a>
+          </li>
+        </ul>
+        <div class="more">
+          <a class="btn m-btn btn-flat btn-blue" href="#/applications">更多&gt;&gt;</a>
+        </div>
+      </div>
+    </card>
+    <card card-title="服务" show-foot=false title-color="bg-green" title-font-color="t-white">
+      <div class="c-content">
+        <div class="status-name">服务配额</div>
+        <div class="status-data"><span ng-bind="serviceNum">0</span>&nbsp;可用&nbsp;/&nbsp;共&nbsp;<span
+            ng-bind="totalService">0</span></div>
+        <!--<input type="text" ng-model="test"/>-->
+        <process-bar percent="{{serviceNum / totalService * 100}}%" class="clear-fix"></process-bar>
+        <ul class="overview-list">
+          <li ng-repeat="service in services">
+            <a href="#/services_instances/{{service.guid}}">
+              <div><img ng-src="/images/services/{{service.service_type}}.png"/></div>
+              <span class="t-blue-grey-800" ng-bind="service.name"></span>
+            </a>
+          </li>
+        </ul>
+        <div class="more">
+          <a class="btn m-btn btn-flat btn-blue" href="#/services_instances">更多&gt;&gt;</a>
+        </div>
+      </div>
+    </card>
+    <card card-title="消息" show-foot=false title-color="bg-green" title-font-color="t-white">
+      <div class="c-content">
+        <div class="status-name">
+          今日消息
+        </div>
+        <div class="status-data">
+          <span ng-bind="msgInfo[0].value">0</span>&nbsp;错误&nbsp;/&nbsp;<span
+            ng-bind="msgInfo[1].value">0</span>&nbsp;警告&nbsp;/&nbsp;<span ng-bind="msgInfo[2].value">0</span>&nbsp;消息
+        </div>
+        <percentage-bar items="msgInfo" class="clear-fix"></percentage-bar>
+        <div class="more">
+          <a class="btn m-btn btn-flat btn-blue" href="javascript:;">更多&gt;&gt;</a>
+        </div>
+      </div>
+    </card>
+    <div class="clear-fix"></div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<div ui-content-for="title">
+  <span>服务</span>
+</div>
+<div ui-content-for="topbar-left">
+  <div class="btn" ng-click="goBack()">
+    <i class="fa fa-chevron-left"></i>
+  </div>
+</div>
+<div ui-content-for="topbar-right">
+  <div class="btn">
+    <i class="fa fa-ellipsis-v"></i>
+  </div>
+</div>
+
+<div class="scrollable" ng-init="loadServiceInstance()">
+  <detail-header
+      class="scrollable-header"
+      bg-color="bg-blue"
+      img-url="/images/services/{{serviceInstance.service_name}}.png"
+      title="{{serviceInstance.name}}"
+      status-color="{{serviceInstanceStatus[serviceInstance.state].color}}"
+      status-text="{{serviceInstanceStatus[serviceInstance.state].text}}">
+    <div>{{serviceInstance.description}}</div>
+  </detail-header>
+  <div class="scrollable-content">
+    <card title-color="bg-green" show-foot="false" card-title="服务实例信息">
+      <div class="c-content">
+        <table class="service-info">
+          <tbody>
+          <tr>
+            <th>服务类型:</th>
+            <td ng-bind="serviceInstance.service_name"></td>
+          </tr>
+          <tr>
+            <th>套餐:</th>
+            <td ng-bind="serviceInstance.plan_name"></td>
+          </tr>
+          <tr>
+            <th>应用数量:</th>
+            <td ng-bind="serviceInstance.bind_apps.length"></td>
+          </tr>
+          <tr>
+            <th>创建时间:</th>
+            <td ng-bind="serviceInstance.create_at"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </card>
+    <card title-color="bg-green" show-foot="false" card-title="绑定的应用">
+      <div class="c-content">
+        <ul class="overview-list">
+          <li ng-repeat="app in serviceInstance.bind_apps">
+            <a href="#/applications/{{app.guid}}">
+              <div><img ng-src="/images/appFrameworks/{{app.app_type}}.png"/></div>
+              <span class="t-blue-grey-800" ng-bind="app.name"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </card>
+  </div>
+
+</div>
+
